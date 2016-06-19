@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="RapidNote" ng-csp="">
+
+  <head>
+    <title>ShowTime (Custom)</title>
+    <script src="../bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+    <!-- <script src="popup_script.js"></script> -->
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../bower_components/angular/angular-csp.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body ng-controller="ListController">
+    <div class="header">
+      <span>RapidNote</span>
+      <span>{{list.length}}</span>
+    </div>
+    <div class="content-container">
+        <div class="no-notes-text" ng-hide="list.length > 0">No Notes</div>
+        <div class="list" ng-hide="list.length == 0">
+          <ul>
+            <li ng-repeat="listEl in list track by $index" class="slide">
+                <div class="note-text">{{listEl}}</div>
+                <div class="remove-cross" ng-click="removeNote($index)"></div>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="input-field" ng-keypress="$event.which === 13 && addToList()">
+      <input type="text" name="note" value="" ng-model="note" placeholder="Add note ...">
+      <div class="add-button" ng-click="addToList()" ng-class="{'disabled' : note == ''}">Add</div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "Showtime",
+  "authors": [
+    "Adrian Lesniak <adrian110288@gmail.com>"
+  ],
+  "description": "Chrome extension",
+  "main": "popup_script.js",
+  "license": "MIT",
+  "homepage": "dist/popup.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.7"
+  },
+  "dependencies": {
+    "angular-animate": "^1.5.7"
+  }
+}
